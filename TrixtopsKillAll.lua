@@ -8,7 +8,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
             local args = {
                 [1] = "scrub",
                 [2] = humanoid,
-                [3] = 10 
+                [3] = 100
             }
             remote:FireServer(unpack(args))
         end
