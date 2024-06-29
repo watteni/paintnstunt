@@ -9,7 +9,7 @@ local players = game:GetService("Players"):GetPlayers()
 game:GetService("RunService").RenderStepped:Connect(function()
     for _, player in ipairs(players) do
         local head = player.Character:FindFirstChild("Head")
-        if head and player ~= Players.LocalPlayer and player.Character and player.Character:FindFirstChild("Humanoid") then
+        if head and player ~= Players.LocalPlayer and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
             chatremote:FireServer(unpack(chatargs))    
             local castargs = {
                 [1] = "Cast",
