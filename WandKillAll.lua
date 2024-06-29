@@ -10,6 +10,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
     for _, player in ipairs(players) do
         local head = player.Character:FindFirstChild("Head")
         if head and player ~= Players.LocalPlayer and player.Character and player.Character:FindFirstChild("Humanoid") then
+            chatremote:FireServer(unpack(chatargs))    
             local castargs = {
                 [1] = "Cast",
                 [2] = head.position,
@@ -18,7 +19,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                 [5] = game:GetService("Players").LocalPlayer.Character.Wand,
                 [6] = false
             }
-            remote:FireServer(unpack(castargs))
+            castremote:FireServer(unpack(castargs))
         end
     end
 end)
